@@ -1,4 +1,3 @@
-
 # 📑 Research Notes: Crypta-Vault (Decentralized Identity Vault)
 
 This document outlines the theoretical and technical research supporting the development of the **Decentralized Identity Vault**, focusing on solving systemic issues in FinTech and Governance sectors.
