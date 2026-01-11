@@ -184,7 +184,6 @@ The vault uses a "Defense-in-Depth" strategy to ensure that technical or securit
 
 ## 🔄 Dynamic Resilience Flowchart
 This diagram illustrates the logic branches the system takes during growth or failure events.
----
 <img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/33b0c424-2f7d-4787-a00e-45e81fc4302b" />
 ---
 ## @Codexcel⚡
