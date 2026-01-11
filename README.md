@@ -51,6 +51,26 @@ Research indicates that decentralizing identity has a multi-stakeholder benefit:
 <img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/891b4a48-6548-4925-81ca-f7c3c41d49cb" />
 
 ---
+## 🧩 Problem Statement
+In today’s digital age, both financial services (loans, KYC, insurance) and government services (permits, grievances, welfare schemes) depend heavily on identity verification. Current systems face several critical challenges:
+
+* **1️⃣ Centralized Data Storage:** User documents (Aadhaar, PAN, certificates) are stored in centralized servers which act as single points of failure and targets for cyberattacks.
+* **2️⃣ Loss of User Control:** Once documents are uploaded, users lose control over who accesses their data, how long it is stored, and if it is reused without consent.
+* **3️⃣ Privacy Exposure:** Systems often require sharing full documents even when only partial information is needed (e.g., sharing a full date of birth just to verify age).
+* **4️⃣ Inefficient Governance Processes:** Manual verification and human intervention lead to delays, corruption risks, and poor citizen experiences.
+* **5️⃣ Weak Authentication Mechanisms:** Password-based systems are vulnerable to leaks and offer little protection against impersonation once compromised.
+
+**Impact:** Citizens face security risks and slow services, while institutions struggle with fraud and compliance inefficiency.
+
+---
+
+## 💡 Proposed Solution
+The proposed **Decentralized Digital Identity Vault** creates a secure, transparent, and efficient identity verification ecosystem by combining:
+* 🔒 **Privacy-preserving cryptography** 
+* 🤖 **AI-based authentication** 
+* ⚙️ **Automated governance workflows** 
+
+---
 
 # 🗺️ Implementation Roadmap: Crypta-Vault Deployment
 
@@ -163,6 +183,7 @@ The vault uses a "Defense-in-Depth" strategy to ensure that technical or securit
 ---
 
 ## 🔄 Dynamic Resilience Flowchart
+
 This diagram illustrates the logic branches the system takes during growth or failure events.
 <img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/33b0c424-2f7d-4787-a00e-45e81fc4302b" />
 ---
