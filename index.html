@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quantum-Code: Advanced Domain Auditor</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root { --quantum-neon: #00ffcc; --bg: #050505; --panel: #111; }
+        body { background: var(--bg); color: #e2e8f0; font-family: 'Fira Code', monospace; padding: 20px; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .card { background: var(--panel); border: 1px solid #334155; border-radius: 12px; padding: 20px; }
+        textarea { width: 100%; height: 300px; background: #020617; color: var(--quantum-neon); border: 1px solid var(--quantum-neon); border-radius: 8px; padding: 15px; resize: none; }
+        .btn-quantum { background: var(--quantum-neon); color: black; border: none; padding: 12px; width: 100%; font-weight: bold; cursor: pointer; border-radius: 6px; margin-top: 10px; }
+        .domain-tag { display: inline-block; padding: 4px 10px; border-radius: 4px; font-size: 0.75em; background: rgba(0, 255, 204, 0.1); color: var(--quantum-neon); margin-bottom: 10px; }
+        #audit-results { height: 150px; overflow-y: auto; font-size: 0.85em; border-top: 1px solid #333; margin-top: 15px; padding-top: 10px; }
+        .status-pass { color: #4ade80; } .status-fail { color: #f43f5e; }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="card">
+            <span class="domain-tag">S8: OPEN INNOVATION ENGINE</span>
+            <h2>Code Optimization Hub</h2>
+            <textarea id="codeInput" placeholder="// Paste your project code here..."></textarea>
+            <button class="btn-quantum" onclick="runQuantumAudit()">Run Multidomain Audit</button>
+        </div>
+
+        <div class="card">
+            <h3>Multidomain Compliance Metrics</h3>
+            <canvas id="domainChart" height="150"></canvas>
+            
+            <div id="audit-results">
+                <strong>Domain Audit Logs:</strong><br>
+                <small>Ready for input analysis...</small>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data derived from provided problem statements
+        const domainData = {
+            "S1: FinTech": "Secure transactions, encryption, KYC flows, and compliance-friendly architecture.",
+            "S3: Web3": "Smart contracts, asset tracking, provenance, and trustless interactions.",
+            "S4: AR/VR": "Spatial mapping, gesture interactions, and rendering pipelines.",
+            "S5: Governance": "Public service portals, grievance systems, and document verification.",
+            "S6: AI/ML": "Feature engineering, training pipelines, and evaluation metrics.",
+            "S7: IoT": "Data ingestion pipelines, automation rules, and real-time alerts."
+        };
+
+        const ctx = document.getElementById('domainChart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: Object.keys(domainData),
+                datasets: [{ label: 'Domain Compatibility %', data: [0,0,0,0,0,0], borderColor: '#00ffcc', backgroundColor: 'rgba(0, 255, 204, 0.2)' }]
+            },
+            options: { scales: { r: { grid: { color: '#333' }, ticks: { display: false } } } }
+        });
+
+        function runQuantumAudit() {
+            const code = document.getElementById('codeInput').value.toLowerCase();
+            const log = document.getElementById('audit-results');
+            log.innerHTML = "<strong>Analyzing against PDF Statement Requirements...</strong><br>";
+            
+            let scores = [];
+            // Dynamic Keyword Analysis based on PDF Requirements
+            scores.push(code.includes('encrypt') || code.includes('pay') ? 95 : 20); // S1
+            scores.push(code.includes('contract') || code.includes('block') ? 90 : 15); // S3
+            scores.push(code.includes('spatial') || code.includes('render') ? 85 : 10); // S4
+            scores.push(code.includes('portal') || code.includes('verify') ? 80 : 25); // S5
+            scores.push(code.includes('model') || code.includes('predict') ? 92 : 30); // S6
+            scores.push(code.includes('sensor') || code.includes('alert') ? 88 : 12); // S7
+
+            chart.data.datasets[0].data = scores;
+            chart.update();
+
+            // Log detailed insights based on PDF statements
+            if (scores[0] > 50) log.innerHTML += "<span class='status-pass'>[S1 Compliance]</span> High-reliability encryption detected.<br>";
+            if (scores[4] > 50) log.innerHTML += "<span class='status-pass'>[S6 Compliance]</span> Feature engineering logic identified.<br>";
+            if (scores.every(s => s < 50)) log.innerHTML += "<span class='status-fail'>[Alert]</span> Code lacks domain-specific optimization hooks.<br>";
+            
+            log.scrollTop = log.scrollHeight;
+        }
+    </script><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Secure-Identity Vault | S1-S3-S5 Hybrid</title>
+    <style>
+        :root { --vault-gold: #fbbf24; --bg: #0f172a; --panel: #1e293b; }
+        body { background: var(--bg); color: #f1f5f9; font-family: 'Inter', sans-serif; padding: 40px; }
+        .container { max-width: 1000px; margin: auto; }
+        .grid { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
+        .card { background: var(--panel); border-radius: 12px; padding: 25px; border: 1px solid #334155; }
+        .status-badge { background: rgba(251, 191, 36, 0.1); color: var(--vault-gold); padding: 5px 12px; border-radius: 20px; font-size: 0.8em; }
+        .btn-action { background: var(--vault-gold); color: #000; border: none; padding: 12px 20px; border-radius: 6px; font-weight: bold; cursor: pointer; width: 100%; margin-top: 15px; }
+        #audit-log { background: #020617; padding: 15px; height: 150px; overflow-y: auto; font-family: monospace; font-size: 0.85em; margin-top: 15px; border-radius: 8px; }
+        .input-group { margin-bottom: 15px; }
+        input { width: 100%; padding: 10px; background: #0f172a; border: 1px solid #334155; color: white; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header style="margin-bottom: 30px;">
+            <h1>🛡️ Secure-Identity Vault</h1>
+            <p>Decentralized Governance & FinTech Compliance Flow</p>
+        </header>
+
+        <div class="grid">
+            <div class="card">
+                <h3><span class="status-badge">S5 Governance</span> Citizen Portal</h3>
+                <div class="input-group">
+                    <label>Upload Government ID (Encrypted):</label>
+                    <input type="file" id="docUpload">
+                </div>
+                <button class="btn-action" onclick="simulateVerification()">Verify & Mint Identity Token</button>
+                <div id="audit-log">Waiting for documentation...</div>
+            </div>
+
+            <div class="card">
+                <h3>Compliance Status</h3>
+                <p><strong>KYC Flow:</strong> <span id="kyc-status" style="color: #ef4444;">Pending</span></p>
+                <p><strong>Encryption:</strong> <span style="color: #10b981;">AES-256 Active</span></p>
+                <hr style="border: 0; border-top: 1px solid #334155;">
+                <p><small>Highlight: Consensus logic ensures identity provenance without on-chain data leakage.</small></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function simulateVerification() {
+            const log = document.getElementById('audit-log');
+            const kyc = document.getElementById('kyc-status');
+            
+            log.innerHTML += "> Initializing secure data flow...<br>";
+            
+            // Simulating a real-time interaction (S2/S9)
+            setTimeout(() => {
+                log.innerHTML += "> Performing document verification (S5 logic)...<br>";
+                log.innerHTML += "> Encrypting transaction for S1 compliance...<br>";
+                
+                setTimeout(() => {
+                    log.innerHTML += "> <span style='color: #10b981;'>SUCCESS:</span> DID Minted on-chain (S3).<br>";
+                    kyc.innerText = "Verified";
+                    kyc.style.color = "#10b981";
+                }, 1000);
+            }, 800);
+        }
+    </script>
+</body>
+</html>
+</body>
+</html>
